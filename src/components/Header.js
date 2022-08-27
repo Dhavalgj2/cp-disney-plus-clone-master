@@ -20,10 +20,13 @@ const Header = (props) => {
   }, [username]);
 
   const logoutHandler = (user) => {
-    auth.signOut().then(() => {
-      dispatch(userActions.setSignOutState());
-      history.push("/");
-    });
+    auth
+      .signOut()
+      .then(() => {
+        dispatch(userActions.setSignOutState());
+        history.push("/");
+      })
+      .catch((err) => err.message);
   };
   const handleAuth = () => {
     auth
