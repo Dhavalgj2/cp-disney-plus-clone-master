@@ -4,7 +4,10 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const user = useSelector((state) => state.user.name);
-  return <div>{user}</div>;
+  return <Container>{user}</Container>;
 };
-
+const Container = styled.main`
+  position: relative;
+  background: url("/images/home-background.png");
+`;
 export default Home;
